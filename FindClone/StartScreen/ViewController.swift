@@ -9,11 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-
+    @IBOutlet var startButton: UIButton!
+    
+    @IBAction func startButtonPress(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // "Main" - имя вашего сториборда
+        let viewController = storyboard.instantiateViewController(withIdentifier: "2") // идентификатор VC
+        navigationController?.pushViewController(viewController, animated: false)    }
 }
-

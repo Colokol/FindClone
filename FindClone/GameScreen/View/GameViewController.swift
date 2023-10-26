@@ -9,21 +9,61 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    var gameViewModel = GameViewModel(imageCardArray: CardImageModel.children.loadImage())
+
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var reloadButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        gameViewModel.addCard()
+        bindView()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        gameViewModel.showCardsForInitialDuration(collectionView: collectionView)
     }
-    */
+
+    @IBAction func reloadButtonPress(_ sender: UIButton) {
+        self.scoreLabel.alpha = 0
+        self.reloadButton.isHidden = true
+        gameViewModel.score = 0
+        gameViewModel.addCard()
+        gameViewModel.showCardsForInitialDuration(collectionView: collectionView)
+    }
+
+    func bindView() {
+        gameViewModel.scoreGame.bind { score in
+            print(score)
+            if score == 1 {
+                self.scoreLabel.alpha = 1
+                self.reloadButton.isHidden = false
+            }
+        }
+    }
+
+}
+
+extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        gameViewModel.cardArray.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath) as? CardCollectionViewCell else {return UICollectionViewCell()}
+            cell.presentCard(card: self.gameViewModel.cardArray[indexPath.row])
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard gameViewModel.gameIsActive else { return }
+            gameViewModel.openCard(indexPath: indexPath, collectionView: collectionView)
+        
+    }
 
 }
