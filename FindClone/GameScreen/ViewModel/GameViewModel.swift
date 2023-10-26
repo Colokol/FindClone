@@ -11,15 +11,11 @@ import UIKit
 class GameViewModel {
 
     var scoreGame = Dynamic(0)
-    private var imageCardArray: [String]
+    var imageCardArray = [String]()
     var cardArray = [Card]()
     var openCards: [Card] = []
     var score: Int = 0
     var gameIsActive = true
-
-    init(imageCardArray: [String]) {
-        self.imageCardArray = imageCardArray
-    }
 
     func showCardsForInitialDuration(collectionView: UICollectionView) {
         for card in cardArray {

@@ -9,7 +9,7 @@ import UIKit
 
 class GameViewController: UIViewController {
 
-    var gameViewModel = GameViewModel(imageCardArray: CardImageModel.children.loadImage())
+    var gameViewModel = GameViewModel()
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var scoreLabel: UILabel!
@@ -37,11 +37,10 @@ class GameViewController: UIViewController {
     }
 
     func bindView() {
-        gameViewModel.scoreGame.bind { score in
-            print(score)
-            if score == 1 {
-                self.scoreLabel.alpha = 1
-                self.reloadButton.isHidden = false
+        gameViewModel.scoreGame.bind { [weak self] score in
+            if score == 5 {
+                self?.scoreLabel.alpha = 1
+                self?.reloadButton.isHidden = false
             }
         }
     }
@@ -49,12 +48,12 @@ class GameViewController: UIViewController {
 }
 
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         gameViewModel.cardArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Card", for: indexPath) as? CardCollectionViewCell else {return UICollectionViewCell()}
             cell.presentCard(card: self.gameViewModel.cardArray[indexPath.row])
         return cell
@@ -63,7 +62,6 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard gameViewModel.gameIsActive else { return }
             gameViewModel.openCard(indexPath: indexPath, collectionView: collectionView)
-        
     }
 
 }
