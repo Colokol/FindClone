@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D037FA3AF1C2550DD2D0334 /* Pods_FindClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3679B52E05870DADE1175E7B /* Pods_FindClone.framework */; };
 		CE44F6BB2AE6512900E4A941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6BA2AE6512900E4A941 /* AppDelegate.swift */; };
 		CE44F6BD2AE6512900E4A941 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6BC2AE6512900E4A941 /* SceneDelegate.swift */; };
 		CE44F6BF2AE6512900E4A941 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6BE2AE6512900E4A941 /* ViewController.swift */; };
 		CE44F6C22AE6512900E4A941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE44F6C02AE6512900E4A941 /* Main.storyboard */; };
 		CE44F6C42AE6513600E4A941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE44F6C32AE6513600E4A941 /* Assets.xcassets */; };
 		CE44F6C72AE6513600E4A941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE44F6C52AE6513600E4A941 /* LaunchScreen.storyboard */; };
+		CE44F6D12AE6551F00E4A941 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6D02AE6551F00E4A941 /* GameViewController.swift */; };
+		CE44F6D62AE6556800E4A941 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6D52AE6556800E4A941 /* Card.swift */; };
+		CE44F6D82AE655BE00E4A941 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6D72AE655BE00E4A941 /* GameViewModel.swift */; };
+		CE44F6DA2AE6562300E4A941 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6D92AE6562300E4A941 /* Dynamic.swift */; };
+		CE44F6DC2AE65A9C00E4A941 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6DB2AE65A9C00E4A941 /* CardCollectionViewCell.swift */; };
+		CE44F6DE2AEAA34700E4A941 /* CardImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6DD2AEAA34700E4A941 /* CardImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3679B52E05870DADE1175E7B /* Pods_FindClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		806D79A99C4D747814CA858F /* Pods-FindClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindClone.release.xcconfig"; path = "Target Support Files/Pods-FindClone/Pods-FindClone.release.xcconfig"; sourceTree = "<group>"; };
+		B1E6F22027DFAC0F6D0F7D27 /* Pods-FindClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindClone.debug.xcconfig"; path = "Target Support Files/Pods-FindClone/Pods-FindClone.debug.xcconfig"; sourceTree = "<group>"; };
 		CE44F6B72AE6512900E4A941 /* FindClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE44F6BA2AE6512900E4A941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE44F6BC2AE6512900E4A941 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +34,12 @@
 		CE44F6C32AE6513600E4A941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE44F6C62AE6513600E4A941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE44F6C82AE6513600E4A941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE44F6D02AE6551F00E4A941 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CE44F6D52AE6556800E4A941 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CE44F6D72AE655BE00E4A941 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		CE44F6D92AE6562300E4A941 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		CE44F6DB2AE65A9C00E4A941 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE44F6DD2AEAA34700E4A941 /* CardImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D037FA3AF1C2550DD2D0334 /* Pods_FindClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DF5C9A5F122074947D85E08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1E6F22027DFAC0F6D0F7D27 /* Pods-FindClone.debug.xcconfig */,
+				806D79A99C4D747814CA858F /* Pods-FindClone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		98F3EAFC08FD53569C09E3CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3679B52E05870DADE1175E7B /* Pods_FindClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE44F6AE2AE6512900E4A941 = {
 			isa = PBXGroup;
 			children = (
 				CE44F6B92AE6512900E4A941 /* FindClone */,
 				CE44F6B82AE6512900E4A941 /* Products */,
+				7DF5C9A5F122074947D85E08 /* Pods */,
+				98F3EAFC08FD53569C09E3CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +92,61 @@
 		CE44F6B92AE6512900E4A941 /* FindClone */ = {
 			isa = PBXGroup;
 			children = (
+				CE44F6CF2AE6550100E4A941 /* StartScreen */,
+				CE44F6CE2AE654F200E4A941 /* GameScreen */,
+				CE44F6D92AE6562300E4A941 /* Dynamic.swift */,
 				CE44F6BA2AE6512900E4A941 /* AppDelegate.swift */,
 				CE44F6BC2AE6512900E4A941 /* SceneDelegate.swift */,
-				CE44F6BE2AE6512900E4A941 /* ViewController.swift */,
 				CE44F6C02AE6512900E4A941 /* Main.storyboard */,
 				CE44F6C32AE6513600E4A941 /* Assets.xcassets */,
 				CE44F6C52AE6513600E4A941 /* LaunchScreen.storyboard */,
 				CE44F6C82AE6513600E4A941 /* Info.plist */,
 			);
 			path = FindClone;
+			sourceTree = "<group>";
+		};
+		CE44F6CE2AE654F200E4A941 /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE44F6D42AE6554600E4A941 /* ViewModel */,
+				CE44F6D32AE6553A00E4A941 /* View */,
+				CE44F6D22AE6552D00E4A941 /* Model */,
+			);
+			path = GameScreen;
+			sourceTree = "<group>";
+		};
+		CE44F6CF2AE6550100E4A941 /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE44F6BE2AE6512900E4A941 /* ViewController.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
+		CE44F6D22AE6552D00E4A941 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE44F6D52AE6556800E4A941 /* Card.swift */,
+				CE44F6DD2AEAA34700E4A941 /* CardImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE44F6D32AE6553A00E4A941 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE44F6D02AE6551F00E4A941 /* GameViewController.swift */,
+				CE44F6DB2AE65A9C00E4A941 /* CardCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE44F6D42AE6554600E4A941 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE44F6D72AE655BE00E4A941 /* GameViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +156,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE44F6CB2AE6513600E4A941 /* Build configuration list for PBXNativeTarget "FindClone" */;
 			buildPhases = (
+				CE9630E72AEAAE4900E780F6 /* ShellScript */,
+				D8819F751053006C274C44CE /* [CP] Check Pods Manifest.lock */,
 				CE44F6B32AE6512900E4A941 /* Sources */,
 				CE44F6B42AE6512900E4A941 /* Frameworks */,
 				CE44F6B52AE6512900E4A941 /* Resources */,
@@ -133,12 +217,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CE9630E72AEAAE4900E780F6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		D8819F751053006C274C44CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE44F6B32AE6512900E4A941 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE44F6DC2AE65A9C00E4A941 /* CardCollectionViewCell.swift in Sources */,
+				CE44F6D82AE655BE00E4A941 /* GameViewModel.swift in Sources */,
+				CE44F6DE2AEAA34700E4A941 /* CardImageModel.swift in Sources */,
+				CE44F6D12AE6551F00E4A941 /* GameViewController.swift in Sources */,
 				CE44F6BF2AE6512900E4A941 /* ViewController.swift in Sources */,
+				CE44F6DA2AE6562300E4A941 /* Dynamic.swift in Sources */,
+				CE44F6D62AE6556800E4A941 /* Card.swift in Sources */,
 				CE44F6BB2AE6512900E4A941 /* AppDelegate.swift in Sources */,
 				CE44F6BD2AE6512900E4A941 /* SceneDelegate.swift in Sources */,
 			);
@@ -202,6 +335,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -262,6 +396,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -282,12 +417,14 @@
 		};
 		CE44F6CC2AE6513600E4A941 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1E6F22027DFAC0F6D0F7D27 /* Pods-FindClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q32WAK9PQ6;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -310,12 +447,14 @@
 		};
 		CE44F6CD2AE6513600E4A941 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 806D79A99C4D747814CA858F /* Pods-FindClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q32WAK9PQ6;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FindClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
