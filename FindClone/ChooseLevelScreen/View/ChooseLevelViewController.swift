@@ -18,6 +18,9 @@ class ChooseLevelViewController: UIViewController {
         super.viewDidLoad()
         levelTableView.delegate = self
         levelTableView.dataSource = self
+        levelTableView.separatorStyle = .singleLine
+        levelTableView.separatorColor = .black
+        levelTableView.separatorInset = UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16)
     }
 
 }
@@ -32,6 +35,7 @@ extension ChooseLevelViewController: UITableViewDelegate, UITableViewDataSource 
         cell.textLabel?.text = levelList[indexPath.row]
         let imageName = levelList[indexPath.row].lowercased() + "3"
         cell.imageView?.image = UIImage(named: imageName)
+        cell.selectionStyle = .none
         return cell
     }
 

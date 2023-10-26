@@ -11,8 +11,9 @@ class GameViewController: UIViewController {
 
     var gameViewModel = GameViewModel()
 
+    @IBOutlet var leftLivesLable: UILabel!
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var statusGameLabel: UILabel!
     @IBOutlet var reloadButton: UIButton!
 
     override func viewDidLoad() {
@@ -29,18 +30,32 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func reloadButtonPress(_ sender: UIButton) {
-        self.scoreLabel.alpha = 0
+        self.statusGameLabel.isHidden = true
         self.reloadButton.isHidden = true
         gameViewModel.score = 0
+        gameViewModel.leftLifes.value = 3
         gameViewModel.addCard()
         gameViewModel.showCardsForInitialDuration(collectionView: collectionView)
+        gameViewModel.gameIsActive = true
     }
 
     func bindView() {
         gameViewModel.scoreGame.bind { [weak self] score in
-            if score == 5 {
-                self?.scoreLabel.alpha = 1
+            if score == 6 {
+                self?.statusGameLabel?.text = "You Win"
+                self?.statusGameLabel.isHidden = false
                 self?.reloadButton.isHidden = false
+            }
+        }
+        gameViewModel.leftLifes.bind { [weak self] lives in
+            if lives == 0 {
+                self?.gameViewModel.gameIsActive = false
+                self?.leftLivesLable.text = ""
+                self?.statusGameLabel.isHidden = false
+                self?.statusGameLabel?.text = "You Lose"
+                self?.reloadButton.isHidden = false
+            } else {
+                self?.leftLivesLable.text = "Lives left: \(lives)"
             }
         }
     }

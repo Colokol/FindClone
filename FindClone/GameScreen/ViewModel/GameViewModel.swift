@@ -11,6 +11,7 @@ import UIKit
 class GameViewModel {
 
     var scoreGame = Dynamic(0)
+    var leftLifes = Dynamic(3)
     var imageCardArray = [String]()
     var cardArray = [Card]()
     var openCards: [Card] = []
@@ -75,6 +76,7 @@ class GameViewModel {
                     collectionView.reloadData()
                     self.openCards.removeAll()
                     self.gameIsActive = true
+                    self.leftLifes.value -= 1
                 }
             }
         }
