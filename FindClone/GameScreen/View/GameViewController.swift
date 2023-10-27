@@ -47,6 +47,7 @@ class GameViewController: UIViewController {
                 self?.reloadButton.isHidden = false
             }
         }
+
         gameViewModel.leftLifes.bind { [weak self] lives in
             if lives == 0 {
                 self?.gameViewModel.gameIsActive = false

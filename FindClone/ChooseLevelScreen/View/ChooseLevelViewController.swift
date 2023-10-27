@@ -20,7 +20,6 @@ class ChooseLevelViewController: UIViewController {
         levelTableView.dataSource = self
         levelTableView.separatorStyle = .singleLine
         levelTableView.separatorColor = .black
-        levelTableView.separatorInset = UIEdgeInsets(top: 20, left: 16, bottom: 0, right: 16)
     }
 
 }
@@ -32,8 +31,9 @@ extension ChooseLevelViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.textLabel?.font = UIFont(name: "Helvetica Neue Medium", size: 22)
         cell.textLabel?.text = levelList[indexPath.row]
-        let imageName = levelList[indexPath.row].lowercased() + "3"
+        let imageName = levelList[indexPath.row].lowercased() + "4"
         cell.imageView?.image = UIImage(named: imageName)
         cell.selectionStyle = .none
         return cell
