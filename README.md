@@ -20,8 +20,7 @@
 
 ## Скриншоты
 
-![Скриншот игры 1](/Screenshot1.png)
-<img src="/Screenshot1.png" width="400" height="300">
+<img src="/Screenshot1.png" width="480" height="720">
 
 ## Технологии
 
