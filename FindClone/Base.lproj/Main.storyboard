@@ -17,7 +17,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FcX-GF-3wC">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GIf-xp-wsO">
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="-842" y="-11"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="1" id="BYZ-38-t0r" customClass="ViewController" customModule="FindClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1" id="BYZ-38-t0r" customClass="StartScreenViewController" customModule="FindClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="962.59541984732823" y="-27.464788732394368"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Level: 1-->
         <scene sceneID="RPl-nN-ZBl">
             <objects>
-                <viewController storyboardIdentifier="3" id="coa-MG-69Z" customClass="GameViewController" customModule="FindClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="4" id="coa-MG-69Z" customClass="GameViewController" customModule="FindClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hAB-BH-xGX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,7 +198,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vSD-fa-hfm">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vSD-fa-hfm">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -229,7 +236,7 @@
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="reloadButtonPress:" destination="coa-MG-69Z" eventType="touchUpInside" id="7bU-yN-cGq"/>
+                                    <action selector="playAgainButtonPress:" destination="coa-MG-69Z" eventType="touchUpInside" id="7bU-yN-cGq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lives left: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fp2-s2-V3Q">
@@ -241,27 +248,60 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9t-Md-oF6">
+                                <rect key="frame" x="65.999999999999986" y="698" width="250.66666666666663" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="4aq-HY-ckT"/>
+                                    <constraint firstAttribute="height" constant="60" id="Gyp-KS-d3i"/>
+                                    <constraint firstAttribute="width" constant="250" id="XX5-mu-e3T"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="bmk-13-fDC"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Начать заново"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next level" cornerStyle="fixed">
+                                    <backgroundConfiguration key="background" cornerRadius="0.0">
+                                        <color key="backgroundColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextLevelButtonPress:" destination="coa-MG-69Z" eventType="touchUpInside" id="nXD-lh-i95"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yh6-IQ-mRK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XDo-hb-rOf" firstAttribute="centerX" secondItem="hAB-BH-xGX" secondAttribute="centerX" id="0l9-Du-P75"/>
+                            <constraint firstItem="Yh6-IQ-mRK" firstAttribute="trailing" secondItem="D9t-Md-oF6" secondAttribute="trailing" constant="66" id="9cU-t3-mmG"/>
                             <constraint firstItem="B3W-OM-ARo" firstAttribute="centerX" secondItem="hAB-BH-xGX" secondAttribute="centerX" id="Ap7-oP-BVe"/>
                             <constraint firstItem="fp2-s2-V3Q" firstAttribute="top" secondItem="Yh6-IQ-mRK" secondAttribute="top" constant="1" id="ECU-zh-xTf"/>
                             <constraint firstItem="XDo-hb-rOf" firstAttribute="centerY" secondItem="hAB-BH-xGX" secondAttribute="centerY" id="GnV-f2-dOp"/>
                             <constraint firstItem="B3W-OM-ARo" firstAttribute="top" secondItem="Yh6-IQ-mRK" secondAttribute="top" constant="30" id="Jjd-Zp-d1H"/>
                             <constraint firstItem="fp2-s2-V3Q" firstAttribute="leading" secondItem="Yh6-IQ-mRK" secondAttribute="leading" constant="256" id="KTk-cD-N4P"/>
+                            <constraint firstItem="D9t-Md-oF6" firstAttribute="leading" secondItem="Yh6-IQ-mRK" secondAttribute="leading" constant="66" id="Lq5-YJ-1m9"/>
+                            <constraint firstItem="D9t-Md-oF6" firstAttribute="top" secondItem="XDo-hb-rOf" secondAttribute="bottom" constant="52" id="SXO-lE-ZlA"/>
                             <constraint firstItem="vQA-nf-Ish" firstAttribute="centerX" secondItem="hAB-BH-xGX" secondAttribute="centerX" id="TQa-Oe-eMP"/>
                             <constraint firstItem="Yh6-IQ-mRK" firstAttribute="trailing" secondItem="fp2-s2-V3Q" secondAttribute="trailing" constant="32" id="bAx-YJ-qYm"/>
                             <constraint firstItem="Yh6-IQ-mRK" firstAttribute="bottom" secondItem="vQA-nf-Ish" secondAttribute="bottom" constant="60" id="dXe-64-OQe"/>
+                            <constraint firstItem="Yh6-IQ-mRK" firstAttribute="bottom" secondItem="D9t-Md-oF6" secondAttribute="bottom" constant="60" id="hR4-2a-ST7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="ec7-0s-CRK"/>
+                    <navigationItem key="navigationItem" title="Level: 1" leftItemsSupplementBackButton="YES" id="ec7-0s-CRK">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward.2" catalog="system" id="lbW-xf-wAh">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="backButtonPress:" destination="coa-MG-69Z" id="u7t-gR-fIT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="XDo-hb-rOf" id="PfT-SQ-ivM"/>
                         <outlet property="leftLivesLable" destination="fp2-s2-V3Q" id="YWR-fg-ysk"/>
-                        <outlet property="reloadButton" destination="vQA-nf-Ish" id="Gd2-4P-QFA"/>
+                        <outlet property="nextLevelButton" destination="D9t-Md-oF6" id="vlE-nG-dqN"/>
+                        <outlet property="playAgainButton" destination="vQA-nf-Ish" id="Gd2-4P-QFA"/>
                         <outlet property="statusGameLabel" destination="B3W-OM-ARo" id="gD3-ph-KbR"/>
                     </connections>
                 </viewController>
@@ -269,10 +309,41 @@
             </objects>
             <point key="canvasLocation" x="1713.740458015267" y="-27.464788732394368"/>
         </scene>
+        <!--Timer Screen View Controller-->
+        <scene sceneID="pcI-NM-gG2">
+            <objects>
+                <viewController storyboardIdentifier="3" id="v2a-7I-AZR" customClass="TimerScreenViewController" customModule="FindClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l6k-o8-MPR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-61-lgh">
+                                <rect key="frame" x="150" y="404" width="93" height="44.333333333333314"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hoz-8h-UuQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Dv-61-lgh" firstAttribute="centerX" secondItem="l6k-o8-MPR" secondAttribute="centerX" id="GVx-uI-eSQ"/>
+                            <constraint firstItem="6Dv-61-lgh" firstAttribute="centerY" secondItem="l6k-o8-MPR" secondAttribute="centerY" id="VnK-Ei-1nW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="6Dv-61-lgh" id="yPi-mt-KgF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FuB-Ni-6pS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2538" y="-27"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Find Clone 1" width="375" height="375"/>
         <image name="background" width="1920" height="1200"/>
+        <image name="chevron.backward.2" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
