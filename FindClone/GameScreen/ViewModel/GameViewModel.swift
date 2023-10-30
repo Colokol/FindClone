@@ -70,8 +70,8 @@ final class GameViewModel {
                             self.cardArray[index].isHiden = true
                         }
                     }
-                    self.leftLifes.value -= 1
                     self.gameIsActive = true
+                    self.leftLifes.value -= 1
                     self.openCards.removeAll()
                     collectionView.reloadData()
                 }

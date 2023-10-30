@@ -53,9 +53,7 @@ final class GameViewController: UIViewController {
 
         gameViewModel.leftLifes.bind { [weak self] lives in
             if lives == 0 {
-
-              //  self?.gameLose()
-                self?.gameViewModel.gameIsActive = false
+                self?.gameLose()
             } else {
                 self?.leftLivesLable.text = "Lives left: \(lives)"
             }
@@ -131,6 +129,7 @@ extension GameViewController {
     }
 
     private func gameLose() {
+        gameViewModel.gameIsActive = false
         statusGameLabel?.text = "You Lose"
         leftLivesLable.text = ""
         statusGameLabel.isHidden = false
