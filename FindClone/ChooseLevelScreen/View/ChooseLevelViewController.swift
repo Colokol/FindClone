@@ -7,36 +7,54 @@
 
 import UIKit
 
-class ChooseLevelViewController: UIViewController {
-
-    var cardArray = [String]()
-    var levelList = ["Children", "Animal"]
+final class ChooseLevelViewController: UIViewController {
 
     @IBOutlet var levelTableView: UITableView!
+
+    private let gameCategory = Constants.gameCategoryList
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
+    }
+
+    func setView() {
         levelTableView.delegate = self
         levelTableView.dataSource = self
         levelTableView.separatorStyle = .singleLine
         levelTableView.separatorColor = .black
     }
 
+    deinit {
+        print("TimerVC deinit")
+    }
+
 }
 
-extension ChooseLevelViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - TableView DataSource method
+extension ChooseLevelViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        levelList.count
+        gameCategory.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.font = UIFont(name: "Helvetica Neue Medium", size: 22)
-        cell.textLabel?.text = levelList[indexPath.row]
-        let imageName = levelList[indexPath.row].lowercased() + "4"
+        cell.textLabel?.text = gameCategory[indexPath.row]
+        let imageName = gameCategory[indexPath.row].lowercased() + "4"
         cell.imageView?.image = UIImage(named: imageName)
+        cell.imageView?.contentMode = .scaleAspectFill
         cell.selectionStyle = .none
         return cell
+    }
+
+}
+
+    // MARK: - TableView Delegate method
+extension ChooseLevelViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        120
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -50,19 +68,10 @@ extension ChooseLevelViewController: UITableViewDelegate, UITableViewDataSource 
             default:
                 return
         }
-        cardArray = selectModel.loadImage()
-        if let gameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "3") as? GameViewController {
-            passImageArray(to: gameViewController)
-            navigationController?.pushViewController(gameViewController, animated: false)
-        }
-    }
 
-    func passImageArray(to viewController: GameViewController) {
-        viewController.gameViewModel.imageCardArray = cardArray
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
+        guard let gameVC = storyboard?.instantiateViewController(identifier: "4") as? GameViewController else {return}
+        gameVC.gameViewModel.imageCardArray = selectModel.loadImage()
+        navigationController?.pushViewController(gameVC, animated: false)
     }
 
 }

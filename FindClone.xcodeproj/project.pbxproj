@@ -10,7 +10,7 @@
 		2D037FA3AF1C2550DD2D0334 /* Pods_FindClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3679B52E05870DADE1175E7B /* Pods_FindClone.framework */; };
 		CE44F6BB2AE6512900E4A941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6BA2AE6512900E4A941 /* AppDelegate.swift */; };
 		CE44F6BD2AE6512900E4A941 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6BC2AE6512900E4A941 /* SceneDelegate.swift */; };
-		CE44F6BF2AE6512900E4A941 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6BE2AE6512900E4A941 /* ViewController.swift */; };
+		CE44F6BF2AE6512900E4A941 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6BE2AE6512900E4A941 /* StartScreenViewController.swift */; };
 		CE44F6C22AE6512900E4A941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE44F6C02AE6512900E4A941 /* Main.storyboard */; };
 		CE44F6C42AE6513600E4A941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE44F6C32AE6513600E4A941 /* Assets.xcassets */; };
 		CE44F6C72AE6513600E4A941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE44F6C52AE6513600E4A941 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,7 @@
 		CE44F6DC2AE65A9C00E4A941 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6DB2AE65A9C00E4A941 /* CardCollectionViewCell.swift */; };
 		CE44F6DE2AEAA34700E4A941 /* CardImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6DD2AEAA34700E4A941 /* CardImageModel.swift */; };
 		CE9630ED2AEACF6900E780F6 /* ChooseLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9630EC2AEACF6900E780F6 /* ChooseLevelViewController.swift */; };
+		CE9630F22AEF95D100E780F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9630F12AEF95D100E780F6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +31,7 @@
 		CE44F6B72AE6512900E4A941 /* FindClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE44F6BA2AE6512900E4A941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE44F6BC2AE6512900E4A941 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE44F6BE2AE6512900E4A941 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE44F6BE2AE6512900E4A941 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		CE44F6C12AE6512900E4A941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE44F6C32AE6513600E4A941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE44F6C62AE6513600E4A941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		CE44F6DB2AE65A9C00E4A941 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE44F6DD2AEAA34700E4A941 /* CardImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageModel.swift; sourceTree = "<group>"; };
 		CE9630EC2AEACF6900E780F6 /* ChooseLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLevelViewController.swift; sourceTree = "<group>"; };
+		CE9630F12AEF95D100E780F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +96,14 @@
 		CE44F6B92AE6512900E4A941 /* FindClone */ = {
 			isa = PBXGroup;
 			children = (
+				CE9630EE2AEBCE4F00E780F6 /* TimerScreen */,
 				CE44F6CF2AE6550100E4A941 /* StartScreen */,
 				CE9630E82AEACEFE00E780F6 /* ChooseLevelScreen */,
 				CE44F6CE2AE654F200E4A941 /* GameScreen */,
 				CE44F6D92AE6562300E4A941 /* Dynamic.swift */,
 				CE44F6BA2AE6512900E4A941 /* AppDelegate.swift */,
 				CE44F6BC2AE6512900E4A941 /* SceneDelegate.swift */,
+				CE9630F12AEF95D100E780F6 /* Constants.swift */,
 				CE44F6C02AE6512900E4A941 /* Main.storyboard */,
 				CE44F6C32AE6513600E4A941 /* Assets.xcassets */,
 				CE44F6C52AE6513600E4A941 /* LaunchScreen.storyboard */,
@@ -121,7 +125,7 @@
 		CE44F6CF2AE6550100E4A941 /* StartScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE44F6BE2AE6512900E4A941 /* ViewController.swift */,
+				CE44F6BE2AE6512900E4A941 /* StartScreenViewController.swift */,
 			);
 			path = StartScreen;
 			sourceTree = "<group>";
@@ -182,6 +186,13 @@
 				CE44F6DD2AEAA34700E4A941 /* CardImageModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CE9630EE2AEBCE4F00E780F6 /* TimerScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TimerScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,11 +312,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE44F6DC2AE65A9C00E4A941 /* CardCollectionViewCell.swift in Sources */,
+				CE9630F22AEF95D100E780F6 /* Constants.swift in Sources */,
 				CE44F6D82AE655BE00E4A941 /* GameViewModel.swift in Sources */,
 				CE44F6DE2AEAA34700E4A941 /* CardImageModel.swift in Sources */,
 				CE44F6D12AE6551F00E4A941 /* GameViewController.swift in Sources */,
 				CE9630ED2AEACF6900E780F6 /* ChooseLevelViewController.swift in Sources */,
-				CE44F6BF2AE6512900E4A941 /* ViewController.swift in Sources */,
+				CE44F6BF2AE6512900E4A941 /* StartScreenViewController.swift in Sources */,
 				CE44F6DA2AE6562300E4A941 /* Dynamic.swift in Sources */,
 				CE44F6D62AE6556800E4A941 /* Card.swift in Sources */,
 				CE44F6BB2AE6512900E4A941 /* AppDelegate.swift in Sources */,
