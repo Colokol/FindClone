@@ -25,6 +25,10 @@ final class ChooseLevelViewController: UIViewController {
         levelTableView.separatorColor = .black
     }
 
+    deinit {
+        print("TimerVC deinit")
+    }
+
 }
 
 // MARK: - TableView DataSource method
@@ -65,9 +69,9 @@ extension ChooseLevelViewController: UITableViewDelegate {
                 return
         }
 
-        guard let timerVC = storyboard?.instantiateViewController(identifier: "3") as? TimerScreenViewController else {return}
-        timerVC.cardArray = selectModel.loadImage()
-        navigationController?.pushViewController(timerVC, animated: false)
+        guard let gameVC = storyboard?.instantiateViewController(identifier: "4") as? GameViewController else {return}
+        gameVC.gameViewModel.imageCardArray = selectModel.loadImage()
+        navigationController?.pushViewController(gameVC, animated: false)
     }
 
 }

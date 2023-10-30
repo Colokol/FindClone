@@ -23,7 +23,7 @@ final class GameViewModel {
             card.isHiden = false
         }
         collectionView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
             self.hideAllCards()
             collectionView.reloadData()
         }

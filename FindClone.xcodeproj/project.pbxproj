@@ -21,7 +21,6 @@
 		CE44F6DC2AE65A9C00E4A941 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6DB2AE65A9C00E4A941 /* CardCollectionViewCell.swift */; };
 		CE44F6DE2AEAA34700E4A941 /* CardImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44F6DD2AEAA34700E4A941 /* CardImageModel.swift */; };
 		CE9630ED2AEACF6900E780F6 /* ChooseLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9630EC2AEACF6900E780F6 /* ChooseLevelViewController.swift */; };
-		CE9630F02AEBCE7400E780F6 /* TimerScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9630EF2AEBCE7400E780F6 /* TimerScreenViewController.swift */; };
 		CE9630F22AEF95D100E780F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9630F12AEF95D100E780F6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		CE44F6DB2AE65A9C00E4A941 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE44F6DD2AEAA34700E4A941 /* CardImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageModel.swift; sourceTree = "<group>"; };
 		CE9630EC2AEACF6900E780F6 /* ChooseLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLevelViewController.swift; sourceTree = "<group>"; };
-		CE9630EF2AEBCE7400E780F6 /* TimerScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreenViewController.swift; sourceTree = "<group>"; };
 		CE9630F12AEF95D100E780F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,7 +191,6 @@
 		CE9630EE2AEBCE4F00E780F6 /* TimerScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE9630EF2AEBCE7400E780F6 /* TimerScreenViewController.swift */,
 			);
 			path = TimerScreen;
 			sourceTree = "<group>";
@@ -325,7 +322,6 @@
 				CE44F6D62AE6556800E4A941 /* Card.swift in Sources */,
 				CE44F6BB2AE6512900E4A941 /* AppDelegate.swift in Sources */,
 				CE44F6BD2AE6512900E4A941 /* SceneDelegate.swift in Sources */,
-				CE9630F02AEBCE7400E780F6 /* TimerScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

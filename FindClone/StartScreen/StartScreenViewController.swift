@@ -13,5 +13,7 @@ class StartScreenViewController: UIViewController {
     
     @IBAction func startButtonPress(_ sender: UIButton) {
         guard let viewController = storyboard?.instantiateViewController(withIdentifier: "2") else {return}
-        navigationController?.pushViewController(viewController, animated: false)    }
+        navigationController?.pushViewController(viewController, animated: false)
+    }
+
 }

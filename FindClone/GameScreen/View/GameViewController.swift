@@ -14,14 +14,19 @@ final class GameViewController: UIViewController {
     @IBOutlet var statusGameLabel: UILabel!
     @IBOutlet var playAgainButton: UIButton!
     @IBOutlet var nextLevelButton: UIButton!
-
+    @IBOutlet var timerView: UIView!
+    @IBOutlet var timerLabel: UILabel!
+    
     var gameViewModel = GameViewModel()
+    private var countdownTimer: Timer?
+    private var secondsRemaining = Constants.timerSecondRemaining
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         navigationItem.hidesBackButton = true
+        startTimer()
         gameViewModel.addCard()
         bindView()
         setCollectionLayoutForLevel(level: gameViewModel.level)
@@ -33,10 +38,14 @@ final class GameViewController: UIViewController {
     }
 
     @IBAction func playAgainButtonPress(_ sender: UIButton) {
+        timerView.isHidden = false
+        startTimer()
         reloadGame()
     }
 
     @IBAction func nextLevelButtonPress(_ sender: UIButton) {
+        timerView.isHidden = false
+        startTimer()
         nextLevel()
     }
 
@@ -45,6 +54,9 @@ final class GameViewController: UIViewController {
     }
 
     private func bindView() {
+        leftLivesLable.text = "Lives left: \(gameViewModel.leftLifes.value)"
+        timerLabel.text = "\(secondsRemaining)"
+
         gameViewModel.scoreGame.bind { [weak self] score in
             if score == self?.gameViewModel.level {
                 self?.levelWon()
@@ -82,9 +94,8 @@ extension GameViewController: UICollectionViewDelegate {
     }
 }
 
-    // MARK: Game level extension
+    // MARK: - Game level extension
 extension GameViewController {
-
     private func setCollectionLayoutForLevel(level: Int) {
         func bindCollectionViewCell(cellWidth: CGFloat, cellHeight: CGFloat) {
             var width: CGFloat = 0
@@ -155,4 +166,46 @@ extension GameViewController {
         setCollectionLayoutForLevel(level: gameViewModel.level)
         gameViewModel.showCardsForInitialDuration(collectionView: collectionView)
     }
+}
+
+// MARK: - Timer
+extension GameViewController {
+    func startTimer() {
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+
+    @objc private func updateTimer() {
+        if secondsRemaining > 1 {
+                // Уменьшаем оставшееся время
+            secondsRemaining -= 1
+                // Обновляем текст метки с анимацией перехода
+            UIView.transition(
+                with: timerLabel,
+                duration: 0.5,
+                options: .transitionCrossDissolve,
+                animations: {
+                    self.timerLabel.text = "\(self.secondsRemaining)"
+                    self.timerLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                },
+                completion: { _ in
+                        // Завершение анимации: восстановление начальных размеров
+                    UIView.transition(
+                        with: self.timerLabel,
+                        duration: 0.5,
+                        options: .transitionCrossDissolve,
+                        animations: {
+                            self.timerLabel.transform = .identity
+                        }
+                    )
+                }
+            )
+        } else {
+                // Отключаем таймер, скрываем метку и сбрасываем оставшееся время
+            countdownTimer?.invalidate()
+            timerView.isHidden = true
+            secondsRemaining = Constants.timerSecondRemaining
+            self.timerLabel.text = "\(self.secondsRemaining)"
+        }
+    }
+
 }
