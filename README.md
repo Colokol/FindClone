@@ -20,7 +20,7 @@
 
 ## Скриншоты
 
-<img src="/Screenshot1.png" width="480" height="720">
+<img src="/Screenshot1.png" width="393" height="852">
 
 ## Технологии
 
