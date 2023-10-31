@@ -227,7 +227,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3W-OM-ARo">
-                                <rect key="frame" x="56.333333333333343" y="133" width="280.33333333333326" height="40"/>
+                                <rect key="frame" x="56.333333333333343" y="148" width="280.33333333333326" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="CRW-vC-c6y"/>
                                     <constraint firstAttribute="height" constant="40" id="aPd-gs-j5M"/>
@@ -468,7 +468,7 @@
                             <constraint firstItem="cGK-bY-iB7" firstAttribute="leading" secondItem="hAB-BH-xGX" secondAttribute="leading" id="IVo-8U-r1w"/>
                             <constraint firstItem="cGK-bY-iB7" firstAttribute="top" secondItem="hAB-BH-xGX" secondAttribute="topMargin" constant="-54" id="KwO-2w-z4t"/>
                             <constraint firstItem="D9t-Md-oF6" firstAttribute="centerX" secondItem="cGK-bY-iB7" secondAttribute="centerX" id="QlX-gu-0sN"/>
-                            <constraint firstItem="B3W-OM-ARo" firstAttribute="top" secondItem="Yh6-IQ-mRK" secondAttribute="top" constant="30" id="RTW-dW-VJ9"/>
+                            <constraint firstItem="B3W-OM-ARo" firstAttribute="top" secondItem="Yh6-IQ-mRK" secondAttribute="top" constant="45" id="RTW-dW-VJ9"/>
                             <constraint firstItem="D9t-Md-oF6" firstAttribute="centerX" secondItem="vQA-nf-Ish" secondAttribute="centerX" id="jUK-uk-D0u"/>
                             <constraint firstItem="cxT-OE-vQM" firstAttribute="top" secondItem="Yh6-IQ-mRK" secondAttribute="top" constant="10" id="o0k-JI-Kdc"/>
                             <constraint firstItem="Yh6-IQ-mRK" firstAttribute="trailing" secondItem="B3W-OM-ARo" secondAttribute="trailing" constant="56.333333333333371" id="o0p-Rw-j66"/>

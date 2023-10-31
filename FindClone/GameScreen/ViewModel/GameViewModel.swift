@@ -91,7 +91,6 @@ final class GameViewModel {
     
     func nextLevel() {
         scoreGame.value = 0
-        leftLifes.value = Constants.numberOfLife
         addCard()
         gameIsActive = true
     }
