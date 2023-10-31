@@ -25,10 +25,6 @@ final class ChooseLevelViewController: UIViewController {
         levelTableView.separatorColor = .black
     }
 
-    deinit {
-        print("TimerVC deinit")
-    }
-
 }
 
 // MARK: - TableView DataSource method

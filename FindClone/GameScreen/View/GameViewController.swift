@@ -9,14 +9,17 @@ import UIKit
 
 final class GameViewController: UIViewController {
 
-    @IBOutlet var leftLivesLable: UILabel!
+    @IBOutlet var leftLivesLable: UIBarButtonItem!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var statusGameLabel: UILabel!
     @IBOutlet var playAgainButton: UIButton!
     @IBOutlet var nextLevelButton: UIButton!
     @IBOutlet var timerView: UIView!
     @IBOutlet var timerLabel: UILabel!
-    
+    @IBOutlet var openThreeHintButton: UIButton!
+    @IBOutlet var showCardsHint: UIButton!
+    @IBOutlet var hintsDescriptionView: UIView!
+
     var gameViewModel = GameViewModel()
     private var countdownTimer: Timer?
     private var secondsRemaining = Constants.timerSecondRemaining
@@ -26,6 +29,7 @@ final class GameViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         navigationItem.hidesBackButton = true
+
         startTimer()
         gameViewModel.addCard()
         bindView()
@@ -54,7 +58,7 @@ final class GameViewController: UIViewController {
     }
 
     private func bindView() {
-        leftLivesLable.text = "Lives left: \(gameViewModel.leftLifes.value)"
+        leftLivesLable.title = "Lives: \(gameViewModel.leftLifes.value)"
         timerLabel.text = "\(secondsRemaining)"
 
         gameViewModel.scoreGame.bind { [weak self] score in
@@ -67,7 +71,7 @@ final class GameViewController: UIViewController {
             if lives == 0 {
                 self?.gameLose()
             } else {
-                self?.leftLivesLable.text = "Lives left: \(lives)"
+                self?.leftLivesLable.title = "Lives: \(lives)"
             }
         }
     }
@@ -89,12 +93,12 @@ extension GameViewController: UICollectionViewDataSource {
 // MARK: - Collection Delegate method
 extension GameViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard gameViewModel.gameIsActive else { return }
-        gameViewModel.openCard(indexPath: indexPath, collectionView: collectionView)
+            guard gameViewModel.gameIsActive else { return }
+            gameViewModel.openCard(indexPath: indexPath, collectionView: collectionView)
     }
 }
 
-    // MARK: - Game level extension
+// MARK: - Game level extension
 extension GameViewController {
     private func setCollectionLayoutForLevel(level: Int) {
         func bindCollectionViewCell(cellWidth: CGFloat, cellHeight: CGFloat) {
@@ -140,27 +144,27 @@ extension GameViewController {
     }
 
     private func gameLose() {
-        gameViewModel.gameIsActive = false
         statusGameLabel?.text = "You Lose"
-        leftLivesLable.text = ""
+        leftLivesLable.title = ""
+        gameViewModel.gameIsActive = false
         statusGameLabel.isHidden = false
         playAgainButton.isHidden = false
     }
 
     private func reloadGame() {
-        self.statusGameLabel.isHidden = true
-        self.playAgainButton.isHidden = true
-
         gameViewModel.reloadGame()
         setCollectionLayoutForLevel(level: gameViewModel.level)
         gameViewModel.showCardsForInitialDuration(collectionView: collectionView)
+
         navigationItem.title = "Level: \(gameViewModel.level - 1)"
+        self.statusGameLabel.isHidden = true
+        self.playAgainButton.isHidden = true
     }
 
     private func nextLevel() {
+        navigationItem.title = "Level: \(gameViewModel.level - 1)"
         statusGameLabel.isHidden = true
         nextLevelButton.isHidden = true
-        navigationItem.title = "Level: \(gameViewModel.level - 1)"
 
         gameViewModel.nextLevel()
         setCollectionLayoutForLevel(level: gameViewModel.level)
@@ -172,35 +176,21 @@ extension GameViewController {
 extension GameViewController {
     func startTimer() {
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+
+            // CABasicAnimation для изменения размера текста
+        let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.fromValue = 1.0
+        scaleAnimation.toValue = 4.0
+        scaleAnimation.duration = 3.0
+
+        timerLabel.layer.add(scaleAnimation, forKey: "scaleAnimation")
     }
 
     @objc private func updateTimer() {
         if secondsRemaining > 1 {
-                // Уменьшаем оставшееся время
+            timerLabel.text = "\(secondsRemaining - 1)"
             secondsRemaining -= 1
-                // Обновляем текст метки с анимацией перехода
-            UIView.transition(
-                with: timerLabel,
-                duration: 0.5,
-                options: .transitionCrossDissolve,
-                animations: {
-                    self.timerLabel.text = "\(self.secondsRemaining)"
-                    self.timerLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-                },
-                completion: { _ in
-                        // Завершение анимации: восстановление начальных размеров
-                    UIView.transition(
-                        with: self.timerLabel,
-                        duration: 0.5,
-                        options: .transitionCrossDissolve,
-                        animations: {
-                            self.timerLabel.transform = .identity
-                        }
-                    )
-                }
-            )
         } else {
-                // Отключаем таймер, скрываем метку и сбрасываем оставшееся время
             countdownTimer?.invalidate()
             timerView.isHidden = true
             secondsRemaining = Constants.timerSecondRemaining
@@ -208,4 +198,28 @@ extension GameViewController {
         }
     }
 
+}
+
+// MARK: - Hints
+extension GameViewController {
+    @IBAction func openThreeHintPress(_ sender: UIButton) {
+        gameViewModel.openThreeRandomCardsHint(collectionView: collectionView)
+        openThreeHintButton.setBackgroundImage(UIImage(named: "3.square.used"), for: .normal)
+        openThreeHintButton.isUserInteractionEnabled = false
+    }
+
+    @IBAction func showCardsHintPress(_ sender: UIButton) {
+        gameViewModel.showCardsHint(collectionView: collectionView)
+        showCardsHint.setBackgroundImage(UIImage(named: "eye.slash"), for: .normal)
+        showCardsHint.isUserInteractionEnabled = false
+    }
+
+    @IBAction func hintsHelp(_ sender: UIButton) {
+        hintsDescriptionView.layer.cornerRadius = 30
+        hintsDescriptionView.isHidden = false
+    }
+
+    @IBAction func hintsDescriptionClosseButtonPress(_ sender: UIButton) {
+        hintsDescriptionView.isHidden.toggle()
+    }
 }

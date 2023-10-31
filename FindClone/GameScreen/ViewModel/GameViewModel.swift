@@ -17,13 +17,15 @@ final class GameViewModel {
     var cardArray = [Card]()
     var openCards: [Card] = []
     var gameIsActive = true
+    var difficultTime = UserDefaults.standard.integer(forKey: "Difficult")
+    var openThreeHint = false
 
     func showCardsForInitialDuration(collectionView: UICollectionView) {
         for card in cardArray {
             card.isHiden = false
         }
         collectionView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(difficultTime)) {
             self.hideAllCards()
             collectionView.reloadData()
         }
@@ -94,4 +96,40 @@ final class GameViewModel {
         gameIsActive = true
     }
 
+    func showCardsHint(collectionView: UICollectionView) {
+        for card in cardArray {
+            card.isHiden = false
+        }
+        collectionView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.hideAllCards()
+            collectionView.reloadData()
+        }
+    }
+
+    func openThreeRandomCardsHint(collectionView: UICollectionView) {
+        var cardsToOpen: [IndexPath] = []
+
+        for _ in 0..<3 {
+            var randomIndex: Int
+            repeat {
+                    // Генерируем случайный индекс карты, которую нужно открыть
+                randomIndex = Int.random(in: 0..<cardArray.count)
+            } while !cardArray[randomIndex].isHiden  // Повторяем, пока не найдем скрытую карту
+
+                // Создаем IndexPath для этой карты и добавляем его в массив cardsToOpen
+            let indexPath = IndexPath(item: randomIndex, section: 0)
+            cardsToOpen.append(indexPath)
+            cardArray[randomIndex].isHiden = false
+        }
+
+        collectionView.reloadItems(at: cardsToOpen)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            for indexPath in cardsToOpen {
+                self.cardArray[indexPath.item].isHiden = true
+            }
+            collectionView.reloadItems(at: cardsToOpen)
+        }
+    }
 }
